@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(243, 243, 243);
+}
+
+.author {
+    font-size: 2rem;
+    padding: 15px;
+}
+
+.calculator {
+    max-width: 800px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.calculator-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator-actions__calculate,
+.calculator-actions__reset {
+    background-color: rgb(20, 79, 189);
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calculator-actions__calculate:focus,
+.calculator-actions__calculate:hover,
+.calculator-actions__reset:focus,
+.calculator-actions__reset:hover {
+    background-color: darkblue;
+}
+
+.calculator-actions__calculate:focus,
+.calculator-actions__reset:focus {
+    outline: 2px solid darkblue;
+    outline-offset: 2px;
+}
+
+.calculator-validation-error {
+    width: 100%;
+    display: flex;
+}
+
+.calculator-validation-error__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.vector,
+.metric {
+    display: grid;
+    gap: 25px;
+    border: 0;
+    padding: 75px 0 25px 0;
+    position: relative;
+}
+
+.vector__title,
+.metric__title {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: darkblue;
+}
+
+.vector {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.vector-item {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.vector-item__text {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    font-size: 1rem;
+    padding-bottom: 5px;
+}
+
+.vector-item__field {
+    width: 100%;
+    height: 40px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.vector-item__field[aria-invalid="true"] {
+    border: 2px solid darkred;
+}
+
+.vector-item__field:focus {
+    outline: 2px solid darkblue;
+    outline-offset: -2px;
+}
+
+.metric {
+    grid-template-columns: 1fr;
+}
+
+.metric-item {
+    display: flex;
+    gap: 15px;
+}
+
+.metric-item__text {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 105px;
+}
+
+.validation-error-dialog {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(95, 33, 32);
+    color: rgb(255, 255, 255);
+    fill: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.validation-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.validation-error__close {
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.validation-error__close:hover,
+.validation-error__close:focus {
+    background-color: rgb(253, 237, 237);
+    fill: rgb(95, 33, 32);
+}
+
+.validation-error__close:focus {
+    outline: 2px solid rgb(253, 237, 237);
+    outline-offset: 2px;
+}
+
+@media screen and (max-width: 720px) {
+    .calculator {
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: fit-content;
+        width: 100%;
+        border-radius: 0;
+        padding: 15px;
+    }
+
+    .vector {
+        display: flex;
+        flex-direction: column;
+        gap: 15px
+    }
+}
