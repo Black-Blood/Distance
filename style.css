@@ -21,8 +21,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(243, 243, 243);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #f3f3f3;
 }
 
 .author {
@@ -45,7 +45,7 @@ body {
 
 .calculator-actions__calculate,
 .calculator-actions__reset {
-    background-color: rgb(20, 79, 189);
+    background-color: #144fbd;
     color: white;
     border: none;
     font-size: 1.1rem;
